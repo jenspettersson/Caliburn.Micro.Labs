@@ -4,5 +4,9 @@
     <StackPanel>
         <TextBlock Text="Page Two was activated: " />
         <TextBlock x:Name="TimeActivated" />
+        <StackPanel Orientation="Horizontal" Margin="0 10">
+            <TextBlock Text="Times activated: " />
+            <TextBlock x:Name="TimesActivated" />
+        </StackPanel>
     </StackPanel>
 </UserControl>

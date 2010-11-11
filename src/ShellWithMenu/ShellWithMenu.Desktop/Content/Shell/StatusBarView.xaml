@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ShellWithMenu.Desktop.Content.Shell.StatusBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Moccasin">
+    <Grid>
+        <Border Padding="5">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Status: " FontSize="14" />
+                <TextBlock x:Name="StatusMessage" FontSize="14" FontStyle="Italic" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="ShellWithMenu.Desktop.Content.Shell.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50">
+        <Button x:Name="ShowPageOne" Content="Show Page One" Margin="10" />
+        <Button x:Name="ShowPageTwo" Content="Show Page Two" Margin="10" />
+        <Button x:Name="ShowPageThree" Content="Show Page Three" Margin="10" />
+    </StackPanel>
+</UserControl>

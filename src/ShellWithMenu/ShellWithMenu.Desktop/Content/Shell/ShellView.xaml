@@ -13,19 +13,20 @@
         </StackPanel>
     </StackPanel>-->
 
-    <DockPanel Name="dcPanel" Margin="10">
-        <Border Height="80" DockPanel.Dock="Top">
+    <DockPanel Name="dcPanel">
+        <ContentControl x:Name="StatusBar" DockPanel.Dock="Top" Height="30" />
+        <Border Height="60" DockPanel.Dock="Top" Padding="5" Background="AliceBlue">
             <TextBlock Text="µConductor" FontSize="32" />
         </Border>
 
-        <Border HorizontalAlignment="Stretch" DockPanel.Dock="Bottom">
+        <Border HorizontalAlignment="Stretch" DockPanel.Dock="Bottom" Padding="5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50">
                 <Button x:Name="ShowPageOne" Content="Show Page One" Margin="10" />
                 <Button x:Name="ShowPageTwo" Content="Show Page Two" Margin="10" />
                 <Button x:Name="ShowPageThree" Content="Show Page Three" Margin="10" />
             </StackPanel>
         </Border>
-        <Border>
+        <Border Padding="5">
             <ContentControl x:Name="ActiveItem" />
         </Border>
     </DockPanel>
