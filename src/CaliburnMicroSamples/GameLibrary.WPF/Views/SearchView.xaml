@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="GameLibrary.WPF.Views.SearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <Border DockPanel.Dock="Top"
+		        HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="SearchText"
+				         Width="225">
+                    <TextBox.CaretBrush>
+                        <SolidColorBrush Color="Gray" />
+                    </TextBox.CaretBrush>
+                </TextBox>
+                <Button x:Name="ExecuteSearch"
+				        Content="Go" />
+            </StackPanel>
+        </Border>
+
+        <Button x:Name="AddGame"
+		        DockPanel.Dock="Bottom"
+		        Content="Add Game"
+		        HorizontalAlignment="Center" />
+        
+        <ContentControl x:Name="SearchResults" />
+    </DockPanel>
+</UserControl>

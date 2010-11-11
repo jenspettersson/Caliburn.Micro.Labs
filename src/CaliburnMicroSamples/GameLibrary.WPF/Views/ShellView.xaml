@@ -1,0 +1,21 @@
+﻿<Window x:Class="GameLibrary.WPF.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Resources="clr-namespace:GameLibrary.WPF.Resources" 
+        Title="Game Library" Height="800" Width="450">
+    <DockPanel Background="Black">
+        <Border DockPanel.Dock="Top"
+			        Padding="4">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Back" Style="{StaticResource backButton}" />
+                <TextBlock Text="My Games" Style="{StaticResource header}" />
+            </StackPanel>
+        </Border>
+        <Grid>
+            <Resources:Background />            
+            
+            <!-- Todo: Add TransitioningContentControl -->
+            <ContentControl x:Name="ActiveItem" />
+        </Grid>
+    </DockPanel>
+</Window>

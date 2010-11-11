@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShellWithMenu.Desktop", "ShellWithMenu.Desktop\ShellWithMenu.Desktop.csproj", "{C66A765E-39FA-4442-9014-90411472AC73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLibrary.WPF", "GameLibrary.WPF\GameLibrary.WPF.csproj", "{E8E8793C-5CAE-4E29-A229-A68E6F15DD31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{C66A765E-39FA-4442-9014-90411472AC73}.Debug|x86.Build.0 = Debug|x86
 		{C66A765E-39FA-4442-9014-90411472AC73}.Release|x86.ActiveCfg = Release|x86
 		{C66A765E-39FA-4442-9014-90411472AC73}.Release|x86.Build.0 = Release|x86
+		{E8E8793C-5CAE-4E29-A229-A68E6F15DD31}.Debug|x86.ActiveCfg = Debug|x86
+		{E8E8793C-5CAE-4E29-A229-A68E6F15DD31}.Debug|x86.Build.0 = Debug|x86
+		{E8E8793C-5CAE-4E29-A229-A68E6F15DD31}.Release|x86.ActiveCfg = Release|x86
+		{E8E8793C-5CAE-4E29-A229-A68E6F15DD31}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
