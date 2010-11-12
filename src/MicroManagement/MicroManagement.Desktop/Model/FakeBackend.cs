@@ -49,9 +49,9 @@ namespace MicroManagement.Desktop.Model
             });
         }
 
-        public void Handle(GetAllEmployees search, Action<IEnumerable<EmployeeReport>> reply)
+        public void Handle(GetEmployee search, Action<IEnumerable<EmployeeReport>> reply)
         {
-            reply(_employeeRepository.All());
+            reply(_employeeRepository.GetByExample(new EmployeeReport(search.Id)));
         }
     }
 }

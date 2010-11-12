@@ -19,6 +19,11 @@ namespace MicroManagement.Desktop.ViewModels
         {
             ActivateItem(_manageEmployeesViewModel);
         }
+
+        public void AddEmployee()
+        {
+            ActivateItem(new AddNewEmployeeViewModel());
+        }
     }
     
 }

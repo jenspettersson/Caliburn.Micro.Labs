@@ -75,7 +75,7 @@
     <Compile Include="Framework\Results\Show.cs" />
     <Compile Include="Model\CommandResult.cs" />
     <Compile Include="Model\FakeBackend.cs" />
-    <Compile Include="Model\GetAllEmployees.cs" />
+    <Compile Include="Model\GetEmployee.cs" />
     <Compile Include="Model\IBackend.cs" />
     <Compile Include="Model\ICommand.cs" />
     <Compile Include="Model\IQuery.cs" />
@@ -91,8 +91,12 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Tasks\ShowAddNewEmployeeDialogTask.cs" />
     <Compile Include="Tasks\TaskCollection.cs" />
+    <Compile Include="ViewModels\ViewEmployeeViewModel.cs" />
     <Compile Include="Views\AddNewEmployeeView.xaml.cs">
       <DependentUpon>AddNewEmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeView.xaml.cs">
+      <DependentUpon>EmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListEmployeesView.xaml.cs">
       <DependentUpon>ListEmployeesView.xaml</DependentUpon>
@@ -102,6 +106,9 @@
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewEmployeeView.xaml.cs">
+      <DependentUpon>ViewEmployeeView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListEmployeesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewEmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

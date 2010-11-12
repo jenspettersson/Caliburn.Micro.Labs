@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using MicroManagement.Data;
 using MicroManagement.Data.Dto;
+using MicroManagement.Desktop.Framework.Results;
+using MicroManagement.Desktop.Model;
 
 namespace MicroManagement.Desktop.ViewModels
 {
@@ -20,9 +24,10 @@ namespace MicroManagement.Desktop.ViewModels
             Employees = new ObservableCollection<EmployeeReport>(_employeeRepository.All());
         }
 
-        protected override void OnInitialize()
+        public IEnumerable<IResult> ViewEmployee(EmployeeReport employeeReport)
         {
-            //TODO: Send a command instead of using the employeeRepository directly
+            yield return Show.Child<ViewEmployeeViewModel>().In<IShell>()
+                .Configured(x => x.WithEmployee(employeeReport));
         }
     }
 }

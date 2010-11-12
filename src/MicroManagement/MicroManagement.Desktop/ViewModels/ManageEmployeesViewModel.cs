@@ -7,7 +7,7 @@ namespace MicroManagement.Desktop.ViewModels
 {
     public interface IManageEmployeesViewModel : IConductor, IScreen { }
 
-    [Export(typeof (IManageEmployeesViewModel))]
+    [Export(typeof (IManageEmployeesViewModel)), PartCreationPolicy(CreationPolicy.Shared)]
     public class ManageEmployeesViewModel : Conductor<IScreen>, IManageEmployeesViewModel
     {
         private readonly ListEmployeesViewModel _listEmployeesViewModel;

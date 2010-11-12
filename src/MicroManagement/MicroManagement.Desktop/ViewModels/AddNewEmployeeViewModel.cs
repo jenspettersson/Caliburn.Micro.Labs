@@ -3,8 +3,7 @@ using Caliburn.Micro;
 
 namespace MicroManagement.Desktop.ViewModels
 {
-    [Export(typeof (IAddNewEmployeeViewModel))]
-    public class AddNewEmployeeViewModel: Screen, IAddNewEmployeeViewModel
+    public class AddNewEmployeeViewModel: Screen
     {
         private string _name;
         public string Name

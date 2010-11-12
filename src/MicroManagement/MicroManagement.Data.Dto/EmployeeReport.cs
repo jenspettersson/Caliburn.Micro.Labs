@@ -7,6 +7,11 @@ namespace MicroManagement.Data.Dto
         public Guid Id { get; private set; }
         public string Name { get; private set; }
 
+        public EmployeeReport(Guid id)
+        {
+            Id = id;
+        }
+
         public EmployeeReport(Guid id, string name)
         {
             Id = id;

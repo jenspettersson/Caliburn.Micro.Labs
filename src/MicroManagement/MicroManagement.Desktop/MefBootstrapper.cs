@@ -4,17 +4,30 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
-using System.Reflection;
+using System.Windows;
 using Caliburn.Micro;
 using MicroManagement.Data;
-using MicroManagement.Desktop.Framework;
+using MicroManagement.Data.Dto;
 using MicroManagement.Desktop.ViewModels;
+using MicroManagement.Desktop.Views;
 
 namespace MicroManagement.Desktop
 {
     public class MefBootstrapper : Bootstrapper<IShell>
     {
         private CompositionContainer _container;
+
+        public MefBootstrapper()
+        {
+            Func<Type, DependencyObject, object, UIElement> locateView = ViewLocator.LocateForModelType;
+
+            ViewLocator.LocateForModelType = (modelType, displayLocation, context) =>
+            {
+                return modelType.Equals(typeof(EmployeeReport))
+                    ? new EmployeeView()
+                    : locateView(modelType, displayLocation, context);
+            };
+        }
 
         protected override void Configure()
         {
