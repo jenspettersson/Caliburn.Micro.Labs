@@ -57,7 +57,7 @@ namespace GameLibrary.WPF.ViewModels
                                                                     SearchText = SearchText
                                                                 }.AsResult();
 
-            //Todo: yield return Show.Busy();
+            yield return Show.Busy();
             yield return search;
 
             int resultCount = search.Response.Count();
@@ -81,7 +81,7 @@ namespace GameLibrary.WPF.ViewModels
                 SearchResults = _results.With(search.Response);
             }
 
-            //Todo: yield return Show.NotBusy();
+            yield return Show.NotBusy();
 
         }
 

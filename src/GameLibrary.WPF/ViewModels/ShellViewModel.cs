@@ -14,6 +14,7 @@ namespace GameLibrary.WPF.ViewModels
         [ImportingConstructor]
         public ShellViewModel(SearchViewModel firstScreen)
         {
+            DisplayName = "Game Library";
             _firstScreen = firstScreen;
         }
 

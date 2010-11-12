@@ -11,5 +11,20 @@ namespace GameLibrary.WPF.Framework.Results
         {
             return new OpenChildResult<TChild>(child);
         }
+
+        public static BusyResult Busy()
+        {
+            return new BusyResult(true, null);
+        }
+
+        public static BusyResult Busy(object busyViewModel)
+        {
+            return new BusyResult(true, busyViewModel);
+        }
+
+        public static BusyResult NotBusy()
+        {
+            return new BusyResult(false, null);
+        }
     }
 }

@@ -34,11 +34,11 @@ namespace GameLibrary.WPF.ViewModels
                 Id = _result.Id
             }.AsResult();
 
-            //Todo: yield return Show.Busy();
+            yield return Show.Busy();
             yield return getGame;
             yield return Show.Child<ExploreGameViewModel>().In<IShell>()
                 .Configured(x => x.WithGame(getGame.Response));
-            //Todo: yield return Show.NotBusy();
+            yield return Show.NotBusy();
         }
     }
 }

@@ -56,6 +56,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFControls.Layout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\WPFControls\WPFControls.Layout.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -66,6 +70,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Framework\DefaultBusyService.cs" />
+    <Compile Include="Framework\IBusyService.cs" />
+    <Compile Include="Framework\Results\BusyResult.cs" />
     <Compile Include="Framework\Results\OpenChildResult.cs" />
     <Compile Include="Framework\Results\Show.cs" />
     <Compile Include="Model\AddGameToLibrary.cs" />
@@ -150,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\ColorsAndBrushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates\BusyIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
