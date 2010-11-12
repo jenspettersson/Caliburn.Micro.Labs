@@ -6,8 +6,7 @@ using MicroManagement.Data.Dto;
 
 namespace MicroManagement.Data
 {
-    [PartCreationPolicy(CreationPolicy.Shared)]
-    [Export(typeof(IEmployeeRepository))]
+    [Export(typeof (IEmployeeRepository)), PartCreationPolicy(CreationPolicy.Shared)]
     public class FakeEmployeeRepository : IEmployeeRepository
     {
         public IList<EmployeeReport> Employees;

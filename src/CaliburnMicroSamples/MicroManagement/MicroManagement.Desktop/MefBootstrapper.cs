@@ -4,7 +4,10 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
+using System.Reflection;
 using Caliburn.Micro;
+using MicroManagement.Data;
+using MicroManagement.Desktop.Framework;
 using MicroManagement.Desktop.ViewModels;
 
 namespace MicroManagement.Desktop
@@ -21,9 +24,11 @@ namespace MicroManagement.Desktop
 
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());
-            
+            batch.AddExportedValue<IEmployeeRepository>(new FakeEmployeeRepository());
             batch.AddExportedValue(_container);
 
+            
+            
             _container.Compose(batch);
         }
 

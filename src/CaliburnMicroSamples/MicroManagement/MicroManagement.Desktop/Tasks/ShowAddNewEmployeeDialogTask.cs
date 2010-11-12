@@ -1,23 +1,22 @@
-﻿using Caliburn.Micro;
-using MicroManagement.Desktop.Commands;
+﻿using System.Collections.Generic;
+using Caliburn.Micro;
+using MicroManagement.Desktop.Framework.Results;
+using MicroManagement.Desktop.ViewModels;
 
 namespace MicroManagement.Desktop.Tasks
 {
-    public class ShowAddNewEmployeeDialogTask : ITaskItem
+    public class ShowAddNewEmployeeDialogTask : IGuiTaskItem
     {
-        private readonly IEventAggregator _eventAggregator;
-
-        public ShowAddNewEmployeeDialogTask(IEventAggregator eventAggregator)
+        public ShowAddNewEmployeeDialogTask()
         {
-            _eventAggregator = eventAggregator;
             TaskName = "Add new employee";
         }
 
         public string TaskName { get; set; }
 
-        public void Execute()
+        public IEnumerable<IResult> Execute()
         {
-            _eventAggregator.Publish(new ShowAddNewEmployeeDialogCommand());
+            yield return Show.Child<AddNewEmployeeViewModel>().In<IManageEmployeesViewModel>();
         }
     }
 }

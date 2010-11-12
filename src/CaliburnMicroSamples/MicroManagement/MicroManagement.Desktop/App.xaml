@@ -7,7 +7,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <local:MefBootstrapper x:Key="bootstrapper" />
-                    <local:StructureMapBootstrapper x:Key="structureMapBootstrapper" />
+                    <!--<local:StructureMapBootstrapper x:Key="structureMapBootstrapper" />-->
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

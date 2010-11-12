@@ -1,27 +1,35 @@
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using MicroManagement.Data;
-using MicroManagement.Data.Dto;
-using MicroManagement.Desktop.Commands;
 using MicroManagement.Desktop.Tasks;
 
 namespace MicroManagement.Desktop.ViewModels
 {
-    public interface IManageEmployeesViewModel : IScreen { }
+    public interface IManageEmployeesViewModel : IConductor, IScreen { }
 
-    public class ManageEmployeesViewModel : Screen, IManageEmployeesViewModel
+    [Export(typeof (IManageEmployeesViewModel))]
+    public class ManageEmployeesViewModel : Conductor<IScreen>, IManageEmployeesViewModel
     {
-        private readonly IEmployeeRepository _employeeRepository;
+        private readonly ListEmployeesViewModel _listEmployeesViewModel;
+        public IList<IGuiTaskItem> Tasks { get; set; }
 
-        public ObservableCollection<EmployeeReport> Employees { get; set; }
-
-        public ManageEmployeesViewModel(IEmployeeRepository employeeRepository)
+        [ImportingConstructor]
+        public ManageEmployeesViewModel(ListEmployeesViewModel listEmployeesViewModel)
         {
-            _employeeRepository = employeeRepository;
+            _listEmployeesViewModel = listEmployeesViewModel;
 
-            Employees = new ObservableCollection<EmployeeReport>(_employeeRepository.All());
+            SetupTasks();
+        }
+
+        private void SetupTasks()
+        {
+            Tasks = new List<IGuiTaskItem> { new ShowAddNewEmployeeDialogTask() };
+        }
+
+        protected override void OnInitialize()
+        {
+            base.OnInitialize();
+            ActivateItem(_listEmployeesViewModel);
         }
     }
 }

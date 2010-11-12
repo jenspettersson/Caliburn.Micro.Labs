@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using System.Windows.Input;
 using Caliburn.Micro;
 
 namespace GameLibrary.WPF.Model

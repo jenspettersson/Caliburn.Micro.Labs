@@ -1,4 +1,6 @@
-﻿namespace MicroManagement.Desktop.ViewModels
+﻿using Caliburn.Micro;
+
+namespace MicroManagement.Desktop.ViewModels
 {
-    public interface  IShell {}
+    public interface  IShell : IConductor {}
 }

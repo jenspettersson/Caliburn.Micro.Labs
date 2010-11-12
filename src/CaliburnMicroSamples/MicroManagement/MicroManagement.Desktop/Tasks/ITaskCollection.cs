@@ -4,6 +4,6 @@ namespace MicroManagement.Desktop.Tasks
 {
     public interface ITaskCollection
     {
-        ITaskItem GetTaskByType<T>();
+        IGuiTaskItem GetTaskByType<T>();
     }
 }

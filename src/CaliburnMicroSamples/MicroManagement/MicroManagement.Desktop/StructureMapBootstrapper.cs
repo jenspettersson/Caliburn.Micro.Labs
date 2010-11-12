@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Caliburn.Micro;
+using MicroManagement.Desktop.Framework;
 using MicroManagement.Desktop.ViewModels;
 using StructureMap;
 
