@@ -68,11 +68,25 @@
     </Compile>
     <Compile Include="Framework\Results\OpenChildResult.cs" />
     <Compile Include="Framework\Results\Show.cs" />
+    <Compile Include="Model\AddGameToLibrary.cs" />
+    <Compile Include="Model\BackendUIExtensions.cs" />
+    <Compile Include="Model\CheckGameIn.cs" />
+    <Compile Include="Model\CheckGameOut.cs" />
+    <Compile Include="Model\CommandResult.cs" />
+    <Compile Include="Model\FakeBackend.cs" />
+    <Compile Include="Model\GameDTO.cs" />
+    <Compile Include="Model\GetGame.cs" />
+    <Compile Include="Model\IBackend.cs" />
+    <Compile Include="Model\ICommand.cs" />
+    <Compile Include="Model\IQuery.cs" />
+    <Compile Include="Model\QueryResult.cs" />
+    <Compile Include="Model\SearchGames.cs" />
     <Compile Include="Model\SearchResult.cs" />
     <Compile Include="Resources\Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AddGameViewModel.cs" />
+    <Compile Include="ViewModels\ExploreGameViewModel.cs" />
     <Compile Include="ViewModels\IndividualResultViewModel.cs" />
     <Compile Include="ViewModels\NoResultsViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
@@ -80,6 +94,21 @@
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\AddGameView.xaml.cs">
       <DependentUpon>AddGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExploreGameView.xaml.cs">
+      <DependentUpon>ExploreGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameView.xaml.cs">
+      <DependentUpon>GameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndividualResultView.xaml.cs">
+      <DependentUpon>IndividualResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NoResultsView.xaml.cs">
+      <DependentUpon>NoResultsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ResultsView.xaml.cs">
+      <DependentUpon>ResultsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchView.xaml.cs">
       <DependentUpon>SearchView.xaml</DependentUpon>
@@ -149,6 +178,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddGameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExploreGameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndividualResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NoResultsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ResultsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

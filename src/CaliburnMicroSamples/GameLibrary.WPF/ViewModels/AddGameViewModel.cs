@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.DataAnnotations;
 using System.Windows;
 using Caliburn.Micro;
+using GameLibrary.WPF.Framework;
+using GameLibrary.WPF.Framework.Results;
+using GameLibrary.WPF.Model;
 
 namespace GameLibrary.WPF.ViewModels
 {
@@ -40,9 +44,18 @@ namespace GameLibrary.WPF.ViewModels
             get { return !string.IsNullOrEmpty(Title); }
         }
 
-        public void AddGame()
+        public IEnumerable<IResult> AddGame()
         {
-            //TODO: Add functionality
+            CommandResult add = new AddGameToLibrary
+            {
+                Title = Title,
+                Notes = Notes
+            }.AsResult();
+
+            _wasSaved = true;
+
+            yield return add;
+            yield return Show.Child<SearchViewModel>().In<IShell>();
         }
 
         public override void CanClose(System.Action<bool> callback)

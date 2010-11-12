@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using Caliburn.Micro;
+using GameLibrary.WPF.Framework;
+using GameLibrary.WPF.Framework.Results;
 using GameLibrary.WPF.Model;
 
 namespace GameLibrary.WPF.ViewModels
@@ -22,6 +25,20 @@ namespace GameLibrary.WPF.ViewModels
         public string Title
         {
             get { return _result.Title; }
+        }
+
+        public IEnumerable<IResult> Open()
+        {
+            QueryResult<GameDTO> getGame = new GetGame
+            {
+                Id = _result.Id
+            }.AsResult();
+
+            //Todo: yield return Show.Busy();
+            yield return getGame;
+            yield return Show.Child<ExploreGameViewModel>().In<IShell>()
+                .Configured(x => x.WithGame(getGame.Response));
+            //Todo: yield return Show.NotBusy();
         }
     }
 }

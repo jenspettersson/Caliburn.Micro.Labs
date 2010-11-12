@@ -4,14 +4,29 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.Linq;
+using System.Windows;
 using Caliburn.Micro;
 using GameLibrary.WPF.Framework;
+using GameLibrary.WPF.Model;
+using GameLibrary.WPF.Views;
 
 namespace GameLibrary.WPF
 {
     public class MefBootstrapper : Bootstrapper<IShell>
     {
         private CompositionContainer _container;
+
+        public MefBootstrapper()
+        {
+            Func<Type, DependencyObject, object, UIElement> locateView = ViewLocator.LocateForModelType;
+
+            ViewLocator.LocateForModelType = (modelType, displayLocation, context) =>
+            {
+                return modelType.Equals(typeof(GameDTO))
+                    ? new GameView()
+                    : locateView(modelType, displayLocation, context);
+            };
+        }
 
         protected override void Configure()
         {
