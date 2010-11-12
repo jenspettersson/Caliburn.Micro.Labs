@@ -1,6 +1,5 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
-using MicroManagement.Desktop.Framework;
 
 namespace MicroManagement.Desktop.ViewModels
 {
@@ -18,11 +17,6 @@ namespace MicroManagement.Desktop.ViewModels
         public void ShowManageEmployees()
         {
             ActivateItem(_manageEmployeesViewModel);
-        }
-
-        public void AddEmployee()
-        {
-            ActivateItem(new AddNewEmployeeViewModel());
         }
     }
     

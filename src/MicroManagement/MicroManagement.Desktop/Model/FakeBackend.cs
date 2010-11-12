@@ -4,19 +4,24 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using Caliburn.Micro;
 using MicroManagement.Data;
 using MicroManagement.Data.Dto;
+using MicroManagement.Desktop.Commands;
 
 namespace MicroManagement.Desktop.Model
 {
+    [Export(typeof (IBackend))]
     public class FakeBackend : IBackend
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IEventAggregator _eventAggregator;
 
         [ImportingConstructor]
-        public FakeBackend(IEmployeeRepository employeeRepository)
+        public FakeBackend(IEmployeeRepository employeeRepository, IEventAggregator eventAggregator)
         {
             _employeeRepository = employeeRepository;
+            _eventAggregator = eventAggregator;
         }
 
         public void Send<TResponse>(IQuery<TResponse> query, Action<TResponse> reply)
@@ -52,6 +57,14 @@ namespace MicroManagement.Desktop.Model
         public void Handle(GetEmployee search, Action<IEnumerable<EmployeeReport>> reply)
         {
             reply(_employeeRepository.GetByExample(new EmployeeReport(search.Id)));
+        }
+
+        public void Handle(AddEmployee addEmployee)
+        {
+            var employeeReport = new EmployeeReport(Guid.NewGuid(), addEmployee.Name);
+            _employeeRepository.Save(employeeReport);
+
+            _eventAggregator.Publish(new EmployeeAddedEvent());
         }
     }
 }

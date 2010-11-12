@@ -4,5 +4,6 @@
     <StackPanel>
         <TextBlock Text="Employee View" />
         <ContentControl x:Name="Employee" HorizontalAlignment="Stretch" />
+        <Button x:Name="Back" Content="Back" />
     </StackPanel>
 </UserControl>

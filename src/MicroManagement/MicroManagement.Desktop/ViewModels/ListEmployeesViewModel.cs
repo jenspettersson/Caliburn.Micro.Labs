@@ -5,22 +5,28 @@ using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using MicroManagement.Data;
 using MicroManagement.Data.Dto;
+using MicroManagement.Desktop.Commands;
 using MicroManagement.Desktop.Framework.Results;
 using MicroManagement.Desktop.Model;
 
 namespace MicroManagement.Desktop.ViewModels
 {
     [Export(typeof (ListEmployeesViewModel))]
-    public class ListEmployeesViewModel : Screen
+    public class ListEmployeesViewModel : Screen, IHandle<EmployeeAddedEvent>
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IEventAggregator _eventAggregator;
 
         public ObservableCollection<EmployeeReport> Employees { get; set; }
 
         [ImportingConstructor]
-        public ListEmployeesViewModel(IEmployeeRepository employeeRepository)
+        public ListEmployeesViewModel(IEmployeeRepository employeeRepository, IEventAggregator eventAggregator)
         {
             _employeeRepository = employeeRepository;
+            _eventAggregator = eventAggregator;
+
+            _eventAggregator.Subscribe(this);
+
             Employees = new ObservableCollection<EmployeeReport>(_employeeRepository.All());
         }
 
@@ -28,6 +34,12 @@ namespace MicroManagement.Desktop.ViewModels
         {
             yield return Show.Child<ViewEmployeeViewModel>().In<IShell>()
                 .Configured(x => x.WithEmployee(employeeReport));
+        }
+
+        public void Handle(EmployeeAddedEvent message)
+        {
+            Employees = new ObservableCollection<EmployeeReport>(_employeeRepository.All());
+            NotifyOfPropertyChange(() => Employees);
         }
     }
 }

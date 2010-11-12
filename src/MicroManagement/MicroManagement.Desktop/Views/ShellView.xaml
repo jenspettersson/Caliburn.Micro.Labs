@@ -17,7 +17,6 @@
         <Border HorizontalAlignment="Stretch" DockPanel.Dock="Bottom" Padding="5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50">
                 <Button x:Name="ShowManageEmployees" Content="Manage Employees" Margin="10" />
-                <Button x:Name="AddEmployee" Content="Add Employees" Margin="10" />
             </StackPanel>
         </Border>
         <Border Padding="5">

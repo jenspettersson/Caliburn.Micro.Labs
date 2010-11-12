@@ -69,19 +69,22 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\ShowAddNewEmployeeDialogCommand.cs" />
+    <Compile Include="Commands\AddEmployee.cs" />
     <Compile Include="DataRegistry.cs" />
     <Compile Include="Framework\Results\OpenChildResult.cs" />
     <Compile Include="Framework\Results\Show.cs" />
+    <Compile Include="Model\BackendUIExtensions.cs" />
     <Compile Include="Model\CommandResult.cs" />
     <Compile Include="Model\FakeBackend.cs" />
     <Compile Include="Model\GetEmployee.cs" />
     <Compile Include="Model\IBackend.cs" />
     <Compile Include="Model\ICommand.cs" />
     <Compile Include="Model\IQuery.cs" />
+    <Compile Include="Model\QueryResult.cs" />
     <Compile Include="StructureMapBootstrapper.cs" />
     <Compile Include="TaskRegistry.cs" />
     <Compile Include="UserIntefaceRegistry.cs" />
+    <Compile Include="Commands\EmployeeAddedEvent.cs" />
     <Compile Include="ViewModels\IShell.cs" />
     <Compile Include="Tasks\ITaskCollection.cs" />
     <Compile Include="Tasks\IGuiTaskItem.cs" />
