@@ -35,12 +35,12 @@ namespace MicroManagement.Desktop.ViewModels
 
             yield return add;
 
-            yield return Show.Child<IManageEmployeesViewModel>().In<IShell>();
+            yield return Show.Child<ListEmployeesViewModel>().In<IManageEmployeesViewModel>();
         }
 
         public IEnumerable<IResult> Back()
         {
-            yield return Show.Child<IManageEmployeesViewModel>().In<IShell>();
+            yield return Show.Child<ListEmployeesViewModel>().In<IManageEmployeesViewModel>();
         }
 
         public bool CanAddEmployee

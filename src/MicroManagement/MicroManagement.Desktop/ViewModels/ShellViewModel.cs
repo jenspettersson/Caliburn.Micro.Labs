@@ -19,5 +19,4 @@ namespace MicroManagement.Desktop.ViewModels
             ActivateItem(_manageEmployeesViewModel);
         }
     }
-    
 }

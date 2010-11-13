@@ -22,7 +22,7 @@ namespace MicroManagement.Desktop.ViewModels
 
         public IEnumerable<IResult> Back()
         {
-            yield return Show.Child<IManageEmployeesViewModel>().In<IShell>();
+            yield return Show.Child<ListEmployeesViewModel>().In<IManageEmployeesViewModel>();
         }
     }
 }

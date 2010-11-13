@@ -32,7 +32,7 @@ namespace MicroManagement.Desktop.ViewModels
 
         public IEnumerable<IResult> ViewEmployee(EmployeeReport employeeReport)
         {
-            yield return Show.Child<ViewEmployeeViewModel>().In<IShell>()
+            yield return Show.Child<ViewEmployeeViewModel>().In<IManageEmployeesViewModel>()
                 .Configured(x => x.WithEmployee(employeeReport));
         }
 

@@ -16,7 +16,7 @@ namespace MicroManagement.Desktop.Tasks
 
         public IEnumerable<IResult> Execute()
         {
-            yield return Show.Child<AddNewEmployeeViewModel>().In<IShell>();
+            yield return Show.Child<AddNewEmployeeViewModel>().In<IManageEmployeesViewModel>();
         }
     }
 }
