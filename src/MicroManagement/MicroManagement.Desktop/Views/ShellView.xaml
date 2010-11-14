@@ -1,26 +1,34 @@
 ﻿<Window x:Class="MicroManagement.Desktop.Views.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Micro Management" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Resources="clr-namespace:MicroManagement.Desktop.Resources" Title="Micro Management" 
         Height="600"
         Width="800"
         WindowStartupLocation="CenterScreen">
-    <DockPanel>
-        <!--<ContentControl x:Name="StatusBar" DockPanel.Dock="Top" Height="30" />-->
-        <Border Height="45" DockPanel.Dock="Top" Padding="5" Background="AliceBlue">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Micro " FontSize="24" FontStyle="Italic" />
-                <TextBlock Text="Management" FontSize="24" />
-            </StackPanel>
-        </Border>
+    <Grid Background="#FF0F2F45">
+        <Resources:Background />
+        <DockPanel>
+            <!--<ContentControl x:Name="StatusBar" DockPanel.Dock="Top" Height="30" />-->
+            <Border Height="45" DockPanel.Dock="Top" Padding="5">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Micro "
+                               FontSize="24"
+                               FontStyle="Italic"
+                               Foreground="{DynamicResource HeaderTextBrush}" />
+                    <TextBlock Text="Management"
+                               FontSize="24"
+                               Foreground="{DynamicResource HeaderTextBrush}" />
+                </StackPanel>
+            </Border>
 
-        <Border HorizontalAlignment="Stretch" DockPanel.Dock="Bottom" Padding="5">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50">
-                <Button x:Name="ShowManageEmployees" Content="Manage Employees" Margin="10" />
-            </StackPanel>
-        </Border>
-        <Border Padding="5">
-            <ContentControl x:Name="ActiveItem" />
-        </Border>
-    </DockPanel>
+            <Border HorizontalAlignment="Stretch" DockPanel.Dock="Bottom" Padding="5 10">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="ShowManageEmployees" Content="Manage Employees" />
+                </StackPanel>
+            </Border>
+            <Border Padding="5">
+                <ContentControl x:Name="ActiveItem" Margin="15" />
+            </Border>
+        </DockPanel>
+    </Grid>
 </Window>

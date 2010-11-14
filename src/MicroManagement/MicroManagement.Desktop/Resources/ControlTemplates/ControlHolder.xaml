@@ -1,0 +1,29 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Resources="clr-namespace:MicroManagement.Desktop.Resources" 
+    mc:Ignorable="d"
+	x:Class="MicroManagement.Desktop.ControlHolder"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../DefaultStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+	</UserControl.Resources>
+
+
+
+	<Grid x:Name="LayoutRoot" Background="#FF0F2F45">
+        <Resources:Background d:IsLocked="True" />
+		<Border Style="{DynamicResource mainContentBorder}" Margin="148,131,152,169">
+        	<Button Content="Very long text to test the button" OverridesDefaultStyle="True" HorizontalAlignment="Left" Margin="60.5,60,0,0" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+		</Border>
+	</Grid>
+	
+</UserControl>
