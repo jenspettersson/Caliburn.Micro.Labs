@@ -8,23 +8,7 @@
     	
         <DockPanel>
             <Border DockPanel.Dock="Top">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="What do you want to do?" />
-                    <ItemsControl x:Name="Tasks" Margin="0 10">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Button ca:Action.Target="{Binding}"
-                                        ca:Message.Attach="Execute"
-                                        Content="{Binding TaskName}" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
+                <ContentControl x:Name="TaskItemsToolbar" />
             </Border>
             <ContentControl x:Name="ActiveItem" />
         </DockPanel>

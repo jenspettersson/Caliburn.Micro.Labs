@@ -9,6 +9,7 @@
                 <ResourceDictionary>
                     <local:MefBootstrapper x:Key="bootstrapper" />
                 </ResourceDictionary>
+                <ResourceDictionary Source="Resources/ControlTemplates/TaskButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

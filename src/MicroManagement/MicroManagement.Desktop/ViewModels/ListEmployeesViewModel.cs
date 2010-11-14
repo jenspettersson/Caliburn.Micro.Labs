@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
@@ -7,7 +6,7 @@ using MicroManagement.Data;
 using MicroManagement.Data.Dto;
 using MicroManagement.Desktop.Commands;
 using MicroManagement.Desktop.Framework.Results;
-using MicroManagement.Desktop.Model;
+using MicroManagement.Desktop.Tasks;
 
 namespace MicroManagement.Desktop.ViewModels
 {
@@ -18,6 +17,9 @@ namespace MicroManagement.Desktop.ViewModels
         private readonly IEventAggregator _eventAggregator;
 
         public ObservableCollection<EmployeeReport> Employees { get; set; }
+
+        [Import(typeof(IManageEmployeesTasksViewModel), AllowDefault = true)]
+        public IManageEmployeesTasksViewModel TaskItemsToolbar { get; set; }
 
         [ImportingConstructor]
         public ListEmployeesViewModel(IEmployeeRepository employeeRepository, IEventAggregator eventAggregator)
@@ -40,6 +42,12 @@ namespace MicroManagement.Desktop.ViewModels
         {
             Employees = new ObservableCollection<EmployeeReport>(_employeeRepository.All());
             NotifyOfPropertyChange(() => Employees);
+        }
+
+        protected override void OnActivate()
+        {
+            base.OnActivate();
+            TaskItemsToolbar.Tasks = new ObservableCollection<IGuiTaskItem> { new ShowAddNewEmployeeDialogTask() };
         }
     }
 }

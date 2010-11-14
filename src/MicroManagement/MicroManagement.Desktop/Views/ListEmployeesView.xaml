@@ -2,15 +2,19 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro">
     <StackPanel>
-        <ListBox x:Name="Employees" Background="Transparent" BorderBrush="Transparent">
-            <ListBox.ItemTemplate>
+        <TextBlock Text="All employees" />
+        
+        <ItemsControl x:Name="Employees">
+            <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Button Content="{Binding Name}" Width="150" Margin="0 5"
+                        <Button Content="{Binding Name}"
+                                Width="150"
+                                Margin="0 5"
                                 cal:Message.Attach="ViewEmployee($dataContext)" />
                     </StackPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </StackPanel>
 </UserControl>

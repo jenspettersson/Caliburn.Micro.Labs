@@ -56,12 +56,12 @@ namespace MicroManagement.Desktop.Model
 
         public void Handle(GetEmployee search, Action<IEnumerable<EmployeeReport>> reply)
         {
-            reply(_employeeRepository.GetByExample(new EmployeeReport(search.Id)));
+            reply(_employeeRepository.GetByExample(new EmployeeReport{ Id = search.Id}));
         }
 
         public void Handle(AddEmployee addEmployee)
         {
-            var employeeReport = new EmployeeReport(Guid.NewGuid(), addEmployee.Name);
+            var employeeReport = new EmployeeReport {Id = Guid.NewGuid(), Name = addEmployee.Name};
             _employeeRepository.Save(employeeReport);
 
             _eventAggregator.Publish(new EmployeeAddedEvent());

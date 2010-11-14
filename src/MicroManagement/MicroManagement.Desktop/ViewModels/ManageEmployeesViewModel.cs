@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 using MicroManagement.Desktop.Tasks;
@@ -11,19 +12,14 @@ namespace MicroManagement.Desktop.ViewModels
     public class ManageEmployeesViewModel : Conductor<IScreen>, IManageEmployeesViewModel
     {
         private readonly ListEmployeesViewModel _listEmployeesViewModel;
-        public IList<IGuiTaskItem> Tasks { get; set; }
+
+        [Import(typeof(IManageEmployeesTasksViewModel), AllowDefault = true)]
+        public IManageEmployeesTasksViewModel TaskItemsToolbar { get; set; }
 
         [ImportingConstructor]
         public ManageEmployeesViewModel(ListEmployeesViewModel listEmployeesViewModel)
         {
             _listEmployeesViewModel = listEmployeesViewModel;
-
-            SetupTasks();
-        }
-
-        private void SetupTasks()
-        {
-            Tasks = new List<IGuiTaskItem> { new ShowAddNewEmployeeDialogTask() };
         }
 
         protected override void OnInitialize()

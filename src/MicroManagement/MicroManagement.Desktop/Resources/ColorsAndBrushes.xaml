@@ -4,4 +4,28 @@
                      Color="Black" />
     <SolidColorBrush x:Key="HeaderTextBrush"
                      Color="White" />
+
+
+    <SolidColorBrush x:Key="buttonBorderBrush"
+                     Color="#FFAFAFAF" />
+    
+	<SolidColorBrush x:Key="taskButtonBorderBrush"
+					 Color="#FF2E4A68" />
+	
+    <LinearGradientBrush x:Key="buttonBackground" EndPoint="0.5,0"
+                         StartPoint="0.5,1">
+        <GradientStop Color="#FFEBEAEF"
+                      Offset="0.966" />
+        <GradientStop Color="#FFC9CED2" />
+        <GradientStop Color="White"
+                      Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="taskButtonBackground"
+                         EndPoint="0.5,0"
+                         StartPoint="0.5,1">
+        <GradientStop Color="#FF386EA7"
+                      Offset="0.966" />
+        <GradientStop Color="#FF265280" />
+    </LinearGradientBrush>
 </ResourceDictionary>

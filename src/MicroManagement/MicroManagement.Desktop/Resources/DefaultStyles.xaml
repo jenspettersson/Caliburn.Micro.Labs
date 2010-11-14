@@ -7,8 +7,42 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="TextBox">
-        <!-- If I don't have anything here, my merged dictionaries above won't be loaded. Perfectly logical, right?! -->
+        
     </Style>
+    
+    <Style TargetType="Button">
+        <Setter Property="Background"
+                Value="{StaticResource buttonBackground}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource buttonBorderBrush}" />
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="Padding"
+                Value="10 5" />
+        <Setter Property="Template"
+                Value="{StaticResource button}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="taskButton">
+        <Setter Property="Background"
+                Value="{StaticResource taskButtonBackground}" />
+		<Setter Property="Foreground"
+				Value="White" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource taskButtonBorderBrush}" />
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="Padding"
+                Value="10 5" />
+        <Setter Property="Template"
+                Value="{StaticResource taskButtonTemplate}" />
+    </Style>
+
+
+
+
+
+
     <Style x:Key="mainContentBorder" TargetType="{x:Type Border}">
     	<Setter Property="Background">
     		<Setter.Value>

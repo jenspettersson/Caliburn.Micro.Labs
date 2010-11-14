@@ -20,8 +20,8 @@ namespace MicroManagement.Data
         {
             Employees = new List<EmployeeReport>();
 
-            Employees.Add(new EmployeeReport(Guid.NewGuid(), "Jens Pettersson"));
-            Employees.Add(new EmployeeReport(Guid.NewGuid(), "Mr Sir Developer"));
+            Employees.Add(new EmployeeReport {Id = Guid.NewGuid(), Name = "Jens Pettersson", Available = false});
+            Employees.Add(new EmployeeReport {Id = Guid.NewGuid(), Name = "Mr Sir Developer", Available = true});
         }
 
         public IEnumerable<EmployeeReport> All()

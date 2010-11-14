@@ -101,6 +101,7 @@
     <Compile Include="Tasks\IGuiTaskItem.cs" />
     <Compile Include="ViewModels\AddNewEmployeeViewModel.cs" />
     <Compile Include="ViewModels\ListEmployeesViewModel.cs" />
+    <Compile Include="ViewModels\ManageEmployeesTasksViewModel.cs" />
     <Compile Include="ViewModels\ManageEmployeesViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Tasks\ShowAddNewEmployeeDialogTask.cs" />
@@ -114,6 +115,9 @@
     </Compile>
     <Compile Include="Views\ListEmployeesView.xaml.cs">
       <DependentUpon>ListEmployeesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageEmployeesTasksView.xaml.cs">
+      <DependentUpon>ManageEmployeesTasksView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ManageEmployeesView.xaml.cs">
       <DependentUpon>ManageEmployeesView.xaml</DependentUpon>
@@ -182,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\ControlTemplates\TaskButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\DefaultStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ListEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ManageEmployeesTasksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
