@@ -8,7 +8,11 @@
     	
         <DockPanel>
             <Border DockPanel.Dock="Top">
-                <ContentControl x:Name="TaskItemsToolbar" />
+                <StackPanel>
+                    <TextBlock Text="Manage Employees"
+                               FontSize="20" />
+                    <ContentControl x:Name="TaskItemsToolbar" />
+                </StackPanel>
             </Border>
             <ContentControl x:Name="ActiveItem" />
         </DockPanel>
