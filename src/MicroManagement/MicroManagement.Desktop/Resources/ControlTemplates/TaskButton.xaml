@@ -5,9 +5,9 @@
 	<ControlTemplate x:Key="taskButtonTemplate"
                      TargetType="{x:Type Button}">
         <Grid>
-        	<VisualStateManager.CustomVisualStateManager>
+        	<!--<VisualStateManager.CustomVisualStateManager>
         		<ei:ExtendedVisualStateManager/>
-        	</VisualStateManager.CustomVisualStateManager>
+        	</VisualStateManager.CustomVisualStateManager>-->
         	<VisualStateManager.VisualStateGroups>
         		<VisualStateGroup x:Name="CommonStates">
         			<VisualStateGroup.Transitions>
